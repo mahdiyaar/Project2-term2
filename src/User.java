@@ -4,12 +4,13 @@ import java.util.regex.Pattern;
 public class User {
     private String name,lastname,field;
     private String username,password,email, phoneNumber;
+    private int id;
 
     private static ArrayList<Static_Atribute> static_atributes=new ArrayList<>();
     private boolean staticatribute[]=new boolean[4];
 
 
-    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber) {
+    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber,int id) {
         for (int i = 0; i < 4; i++) {
             staticatribute[i]=true;
         }
@@ -33,11 +34,15 @@ public class User {
                 staticatribute[0] = false;
                 break;
             }
-            if(password==static_atributes.get(i).getPassword()){
+            if(id==static_atributes.get(i).getId()){
                 staticatribute[1] = false;
                 break;
             }
-            if()
+            if(email==static_atributes.get(i).getEmail()){
+                staticatribute[2]=false;
+                break;
+            }
+            if(phoneNumber==)
         }
         if()
         this.username = username;

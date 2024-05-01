@@ -1,19 +1,16 @@
 public class Static_Atribute {
-    private String username,password,email, phoneNumber;
+    private String username,email, phoneNumber;
+    private int id;
 
-    public Static_Atribute(String username, String password, String email, String phoneNumber) {
+    public Static_Atribute(String username,int id, String email, String phoneNumber) {
         this.username = username;
-        this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.id=id;
     }
 
     public String getUsername() {
         return username;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public String getEmail() {
@@ -22,5 +19,9 @@ public class Static_Atribute {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public int getId() {
+        return id;
     }
 }
