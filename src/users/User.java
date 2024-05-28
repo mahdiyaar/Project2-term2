@@ -185,4 +185,12 @@ public class User {
     protected void setId(String id) {
         this.id = id;
     }
+
+    protected void Showlist(){
+        System.out.println("از موارد زیر یک گزینه را انتخاب کنید و وارد کنید");
+        System.out.println("1.کلاس ها");
+        System.out.println("2.تکلیفات امتحانات کوییزها");
+        System.out.println("3.مظالب درسی واعلانات");
+        System.out.println("4.پروفایل");
+    }
 }
