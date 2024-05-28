@@ -1,10 +1,10 @@
 package users;
 
 import Exceptions.*;
-import Exeptions.PasswordException;
-import Exeptions.PhoneNumberException;
-import Exeptions.UsernameException;
-import Exeptions.emailException;
+import Exceptions.PasswordException;
+import Exceptions.PhoneNumberException;
+import Exceptions.UsernameException;
+import Exceptions.emailException;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,6 +42,7 @@ public class Master extends User {
         while (true) {
             super.showList();
             System.out.println("2.کلاس ها");
+            System.out.println("3.حدف واضافه دانشجو");
             System.out.println("خروج");
             System.out.println("time: " + new Date());
             Scanner scanner = new Scanner(System.in);
@@ -59,7 +60,6 @@ public class Master extends User {
                     for (int i = 0; i < lessons.size(); i++) {
                         System.out.println(i + "- " + lessons.get(i).getName());
                     }
-
                     input = scanner.nextLine();
                     boolean flag = true;
                     Lesson current = null;
@@ -90,6 +90,8 @@ public class Master extends User {
             System.out.println("2. مطالب درسی");
             System.out.println("3. تمارین");
             System.out.println("4. امتحانات");
+            System.out.println("5.حدف دانشجو");
+            System.out.println("6.اضافه دانشجو");
             System.out.println("خروج");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
@@ -137,6 +139,42 @@ public class Master extends User {
                 }
 
                 editPractice();
+            } else if (Objects.equals(input, "5")) {
+                System.out.println("شماره دانشجویی فرئ مورد نظر را وارد کنید");
+                String serchid;
+                boolean removed=false;
+                serchid=scanner.nextLine();
+                for (int i = 0; i < les.students.size(); i++) {
+                    if(Objects.equals(serchid, les.students.get(i).getId())){
+                        for (int j = 0; j < les.students.get(i).lessons.size(); j++) {
+                            if(les.students.get(i).lessons.get(j)==les){
+                                les.students.get(i).lessons.remove(j);
+                            }
+                        }
+                        les.students.remove(i);
+                        removed=true;
+                        break;
+                    }
+                }
+                if(!removed){
+                    System.out.println("دانشجوی موردنظر یافت نشد");
+                }
+            }else if (Objects.equals(input, "6")) {
+                System.out.println("شماره دانشجویی فرئ مورد نظر را وارد کنید");
+                String serchid;
+                boolean plusd = false;
+                serchid = scanner.nextLine();
+                for (int i = 0; i < users.size(); i++) {
+                    if (Objects.equals(serchid, users.get(i).getId())) {
+                        les.students.add((Student) users.get(i));
+                        ((Student) users.get(i)).lessons.add(les);
+                        plusd = true;
+                        break;
+                    }
+                }
+                if (!plusd) {
+                    System.out.println("دانشجوی موردنظر یافت نشد");
+                }
             }
         }
     }

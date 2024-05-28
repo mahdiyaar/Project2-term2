@@ -1,21 +1,21 @@
 package users;
 
-import Exceptions.*;
-
-
-
-
-
-
+import Exceptions.IdException;
+import Exceptions.LastNameException;
+import Exceptions.NameException;
+import Exceptions.emailException;
+import Exceptions.PasswordException;
+import Exceptions.PhoneNumberException;
+import Exceptions.UsernameException;
 
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class User {
-    protected String name, lastname;
-    protected String username, password, email, phoneNumber;
-    protected String id;
+    private String name, lastname;
+    private String username, password, email, phoneNumber;
+    private String id;
     private static ArrayList<Static_Atribute> static_atributes = new ArrayList<>();
     private boolean staticatribute[] = new boolean[4];
 

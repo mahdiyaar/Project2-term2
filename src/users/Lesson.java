@@ -12,7 +12,7 @@ public class Lesson {
     public ArrayList<Practice> practices = new ArrayList<Practice>();
     public ArrayList<Exam> exams = new ArrayList<Exam>();
 
-    private ArrayList<Student> students = new ArrayList<Student>();
+    public ArrayList<Student> students = new ArrayList<Student>();
 
 
 
