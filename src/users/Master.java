@@ -16,7 +16,7 @@ public class Master extends User {
             this.field = field;
         else
             throw new FieldExeption();
-        if(id.length() != 10)throw new IdLenNotMatchException();
+        if(id.length() != 6)throw new IdLenNotMatchException();
     }
 
     protected String getField() {

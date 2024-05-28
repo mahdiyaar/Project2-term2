@@ -186,6 +186,10 @@ public class User {
         this.id = id;
     }
 
+    public boolean matchPassword(String password){
+        return Objects.equals(this.password, password);
+    }
+
     protected void Showlist(){
         System.out.println("از موارد زیر یک گزینه را انتخاب کنید و وارد کنید");
         System.out.println("1.کلاس ها");
