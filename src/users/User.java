@@ -14,14 +14,14 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class User {
-    private String name, lastname, field;
+    private String name, lastname;
     private String username, password, email, phoneNumber;
     private String id;
     private static ArrayList<Static_Atribute> static_atributes = new ArrayList<>();
     private boolean staticatribute[] = new boolean[4];
 
 
-    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber, String id)
+    public User(String name, String lastname, String username, String password, String email, String phoneNumber, String id)
             throws NameException, LastNameException, FieldExeption, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
         for (int i = 0; i < 4; i++) {
             staticatribute[i] = true;
@@ -34,10 +34,7 @@ public class User {
             this.lastname = lastname;
         else
             throw new LastNameException();
-        if (field.length() < 19 && Pattern.matches("[a-zA-Z]", field))
-            this.field = field;
-        else
-            throw new FieldExeption();
+
         for (int i = 0; i < static_atributes.size(); i++) {
             if (Objects.equals(username, static_atributes.get(i).getUsername())) {
                 staticatribute[0] = false;
@@ -107,16 +104,7 @@ public class User {
             throw new NameException();
     }
 
-    protected String getField() {
-        return field;
-    }
 
-    protected void setField(String field) throws FieldExeption {
-        if (field.length() < 19 && Pattern.matches("[a-zA-Z]", field))
-            this.field = field;
-        else
-            throw new FieldExeption();
-    }
 
     protected String getUsername() {
         return username;
