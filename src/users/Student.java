@@ -1,12 +1,6 @@
 package users;
 
 import Exceptions.*;
-import Exeptions.PasswordException;
-import Exeptions.PhoneNumberException;
-import Exeptions.UsernameException;
-import Exeptions.emailException;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 

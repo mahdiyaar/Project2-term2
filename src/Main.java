@@ -1,8 +1,4 @@
 import Exceptions.*;
-import Exeptions.PasswordException;
-import Exeptions.PhoneNumberException;
-import Exeptions.UsernameException;
-import Exeptions.emailException;
 import users.Employee;
 import users.Master;
 import users.Student;

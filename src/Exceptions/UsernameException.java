@@ -1,5 +1,4 @@
-package Exeptions;
+package Exceptions;
 
-public class UsernameException extends Exception
-{
+public class UsernameException extends Exception {
 }

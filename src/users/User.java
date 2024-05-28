@@ -1,12 +1,12 @@
 package users;
 
-import Exceptions.IdException;
-import Exceptions.LastNameException;
-import Exceptions.NameException;
-import Exceptions.emailException;
-import Exeptions.PasswordException;
-import Exeptions.PhoneNumberException;
-import Exeptions.UsernameException;
+import Exceptions.*;
+
+
+
+
+
+
 
 import java.util.ArrayList;
 import java.util.Objects;
