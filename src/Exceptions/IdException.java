@@ -1,4 +1,4 @@
 package Exceptions;
 
-public class IdException extends Throwable {
+public class IdException extends Exception {
 }
