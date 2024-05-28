@@ -20,9 +20,10 @@ public class User {
     private static ArrayList<Static_Atribute> static_atributes = new ArrayList<>();
     private boolean staticatribute[] = new boolean[4];
 
+    public static ArrayList<User> users = new ArrayList<User>();
 
     public User(String name, String lastname, String username, String password, String email, String phoneNumber, String id)
-            throws NameException, LastNameException, FieldExeption, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
+            throws NameException, LastNameException, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
         for (int i = 0; i < 4; i++) {
             staticatribute[i] = true;
         }
@@ -93,7 +94,7 @@ public class User {
             throw new LastNameException();
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
@@ -106,7 +107,7 @@ public class User {
 
 
 
-    protected String getUsername() {
+    public String getUsername() {
         return username;
     }
 
