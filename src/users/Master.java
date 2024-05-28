@@ -12,7 +12,7 @@ public class Master extends User {
     String field;
     public Master(String name, String lastname, String field, String username, String password, String email, String phoneNumber, String id) throws IdLenNotMatchException, FieldExeption, PasswordException, PhoneNumberException, NameException, UsernameException, LastNameException, emailException, IdException {
         super(name, lastname, username, password, email, phoneNumber, id);
-        if (field.length() < 19 && Pattern.matches("[a-zA-Z]", field))
+        if (field.length() < 19 && Pattern.matches("[a-zA-Z]+", field))
             this.field = field;
         else
             throw new FieldExeption();

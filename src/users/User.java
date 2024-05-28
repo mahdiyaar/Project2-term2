@@ -27,11 +27,11 @@ public class User {
         for (int i = 0; i < 4; i++) {
             staticatribute[i] = true;
         }
-        if (name.length() < 19 && Pattern.matches("[a-zA-Z]", name))
+        if (name.length() < 19 && Pattern.matches("[a-zA-Z]+", name))
             this.name = name;
         else
             throw new NameException();
-        if (lastname.length() < 19 && Pattern.matches("[a-zA-Z]", lastname))
+        if (lastname.length() < 19 && Pattern.matches("[a-zA-Z]+", lastname))
             this.lastname = lastname;
         else
             throw new LastNameException();
