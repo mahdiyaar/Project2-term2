@@ -1,4 +1,5 @@
-import Exeptions.*;
+import Exceptions.NameException;
+import Exceptions.*;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
