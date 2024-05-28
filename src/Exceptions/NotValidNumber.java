@@ -1,4 +1,4 @@
 package Exceptions;
 
-public class NotValidNumber extends RuntimeException{
+public class NotValidNumber extends Exception{
 }
