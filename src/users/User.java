@@ -1,6 +1,10 @@
 package users;
 
 import Exeptions.*;
+import Exeptions.FieldExeption;
+import Exeptions.IdException;
+import Exeptions.LastNameException;
+import Exeptions.NameException;
 import Exeptions.PasswordException;
 import Exeptions.PhoneNumberException;
 import Exeptions.UsernameException;
@@ -11,12 +15,12 @@ import java.util.regex.Pattern;
 public class User {
     private String name, lastname, field;
     private String username, password, email, phoneNumber;
-    private int id;
+    private String id;
     private static ArrayList<Static_Atribute> static_atributes = new ArrayList<>();
     private boolean staticatribute[] = new boolean[4];
 
 
-    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber, int id) throws NameException, LastNameException, FieldExeption, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
+    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber, String id) throws NameException, LastNameException, FieldExeption, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
         for (int i = 0; i < 4; i++) {
             staticatribute[i] = true;
         }
@@ -184,11 +188,11 @@ public class User {
             throw new PhoneNumberException();
     }
 
-    protected int getId() {
+    protected String getId() {
         return id;
     }
 
-    protected void setId(int id) {
+    protected void setId(String id) {
         this.id = id;
     }
 }
