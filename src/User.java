@@ -2,30 +2,26 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class User {
-    private String name,lastname,field;
+    private String name,lastname;
     private String username,password,email, phoneNumber;
-    private int id;
+    private String id;
 
     private static ArrayList<Static_Atribute> static_atributes=new ArrayList<>();
     private boolean staticatribute[]=new boolean[4];
 
 
-    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber,int id) {
+    public User(String name, String lastname, String username, String password, String email, String phoneNumber,String id) {
         for (int i = 0; i < 4; i++) {
             staticatribute[i]=true;
         }
-        if(name.length()<19&& Pattern.matches("[a-zA-Z]",name))
+        if(name.length()<19&& Pattern.matches("[a-zA-Z]+",name))
             this.name = name;
         else
             throw new RuntimeException("this name is incorrect");
-        if(name.length()<19&& Pattern.matches("[a-zA-Z]",lastname))
+        if(lastname.length()<19&& Pattern.matches("[a-zA-Z]+",lastname))
             this.lastname = lastname;
         else
             throw new RuntimeException("this lastname is incorrect");
-        if(name.length()<19&& Pattern.matches("[a-zA-Z]",field))
-            this.field = field;
-        else
-            throw new RuntimeException("this field is incorrect");
         for (int i = 0; i < static_atributes.size(); i++) {
 
         }
@@ -42,9 +38,9 @@ public class User {
                 staticatribute[2]=false;
                 break;
             }
-            if(phoneNumber==)
+//            if(phoneNumber==)
         }
-        if()
+//        if()
         this.username = username;
         this.password = password;
         this.email = email;
