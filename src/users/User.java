@@ -1,22 +1,28 @@
 package users;
 
+import Exceptions.FieldExeption;
+import Exceptions.IdException;
+import Exceptions.LastNameException;
+import Exceptions.NameException;
 import Exeptions.*;
 import Exeptions.PasswordException;
 import Exeptions.PhoneNumberException;
 import Exeptions.UsernameException;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class User {
     private String name, lastname, field;
     private String username, password, email, phoneNumber;
-    private int id;
+    private String id;
     private static ArrayList<Static_Atribute> static_atributes = new ArrayList<>();
     private boolean staticatribute[] = new boolean[4];
 
 
-    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber, int id) throws NameException, LastNameException, FieldExeption, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
+    public User(String name, String lastname, String field, String username, String password, String email, String phoneNumber, String id)
+            throws NameException, LastNameException, FieldExeption, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
         for (int i = 0; i < 4; i++) {
             staticatribute[i] = true;
         }
@@ -33,19 +39,19 @@ public class User {
         else
             throw new FieldExeption();
         for (int i = 0; i < static_atributes.size(); i++) {
-            if (username == static_atributes.get(i).getUsername()) {
+            if (Objects.equals(username, static_atributes.get(i).getUsername())) {
                 staticatribute[0] = false;
                 break;
             }
-            if (id == static_atributes.get(i).getId()) {
+            if (Objects.equals(id, static_atributes.get(i).getId())) {
                 staticatribute[1] = false;
                 break;
             }
-            if (email == static_atributes.get(i).getEmail()) {
+            if (Objects.equals(email, static_atributes.get(i).getEmail())) {
                 staticatribute[2] = false;
                 break;
             }
-            if (phoneNumber == static_atributes.get(i).getPhoneNumber()) {
+            if (Objects.equals(phoneNumber, static_atributes.get(i).getPhoneNumber())) {
                 staticatribute[3] = false;
                 break;
             }
@@ -119,7 +125,7 @@ public class User {
     protected void setUsername(String username) throws UsernameException {
         staticatribute[0] = true;
         for (int i = 0; i < static_atributes.size(); i++) {
-            if (username == static_atributes.get(i).getUsername()) {
+            if (Objects.equals(username, static_atributes.get(i).getUsername())) {
                 staticatribute[0] = false;
                 break;
             }
@@ -148,7 +154,7 @@ public class User {
     protected void setEmail(String email) throws emailException {
         staticatribute[2] = true;
         for (int i = 0; i < static_atributes.size(); i++) {
-            if (email == static_atributes.get(i).getEmail()) {
+            if (Objects.equals(email, static_atributes.get(i).getEmail())) {
                 staticatribute[2] = false;
                 break;
             }
@@ -173,7 +179,7 @@ public class User {
     protected void setPhoneNumber(String phoneNumber) throws PhoneNumberException {
         staticatribute[3]=true;
         for (int i = 0; i < static_atributes.size(); i++) {
-            if (phoneNumber == static_atributes.get(i).getPhoneNumber()) {
+            if (Objects.equals(phoneNumber, static_atributes.get(i).getPhoneNumber())) {
                 staticatribute[3] = false;
                 break;
             }
@@ -184,11 +190,11 @@ public class User {
             throw new PhoneNumberException();
     }
 
-    protected int getId() {
+    protected String getId() {
         return id;
     }
 
-    protected void setId(int id) {
+    protected void setId(String id) {
         this.id = id;
     }
 }
