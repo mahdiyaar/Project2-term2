@@ -1,6 +1,10 @@
 package users;
 
 import Exeptions.*;
+import Exeptions.PasswordException;
+import Exeptions.PhoneNumberException;
+import Exeptions.UsernameException;
+
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 

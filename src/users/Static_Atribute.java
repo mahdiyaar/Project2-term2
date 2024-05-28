@@ -1,9 +1,9 @@
 package users;
 public class Static_Atribute {
     private String username,email, phoneNumber;
-    private int id;
+    private String id;
 
-    public Static_Atribute(String username,int id, String email, String phoneNumber) {
+    public Static_Atribute(String username,String id, String email, String phoneNumber) {
         this.username = username;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -22,7 +22,7 @@ public class Static_Atribute {
         return phoneNumber;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 }
