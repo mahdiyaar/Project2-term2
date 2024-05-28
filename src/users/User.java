@@ -1,10 +1,9 @@
 package users;
 
-import Exceptions.FieldExeption;
 import Exceptions.IdException;
 import Exceptions.LastNameException;
 import Exceptions.NameException;
-import Exeptions.*;
+import Exceptions.emailException;
 import Exeptions.PasswordException;
 import Exeptions.PhoneNumberException;
 import Exeptions.UsernameException;
@@ -14,9 +13,9 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class User {
-    private String name, lastname;
-    private String username, password, email, phoneNumber;
-    private String id;
+    protected String name, lastname;
+    protected String username, password, email, phoneNumber;
+    protected String id;
     private static ArrayList<Static_Atribute> static_atributes = new ArrayList<>();
     private boolean staticatribute[] = new boolean[4];
 
@@ -191,11 +190,18 @@ public class User {
         return Objects.equals(this.password, password);
     }
 
-    protected void Showlist(){
+    public void showList(){
+        System.out.println("--------------------");
+        System.out.println("سلام" + name);
         System.out.println("از موارد زیر یک گزینه را انتخاب کنید و وارد کنید");
-        System.out.println("1.کلاس ها");
-        System.out.println("2.تکلیفات امتحانات کوییزها");
-        System.out.println("3.مظالب درسی واعلانات");
-        System.out.println("4.پروفایل");
+        System.out.println("1. پروفایل");
+
+
+
+    }
+
+    public void printProf(){
+        System.out.println(name + " " + lastname + "\n" + "username: " + username + "password: " + password + "\n" +
+                email + "\n" + phoneNumber + "\n" + "id: " + id);
     }
 }

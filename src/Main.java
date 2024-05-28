@@ -44,7 +44,7 @@ public class Main {
                             String password = scanner.nextLine();
                             if(Objects.equals(password, "q"))break;
                             if(loginedUser.matchPassword(password)){
-                                // show list
+                                loginedUser.showList();
                                 break;
                             }else {
                                 System.out.println("password is incorrect. try again");

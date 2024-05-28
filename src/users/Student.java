@@ -37,25 +37,25 @@ public class Student extends User {
     }
 
     @Override
-    protected void Showlist() {
-        super.Showlist();
+    public void showList() {
+        super.showList();
         Scanner scanner=new Scanner(System.in);
         int a=scanner.nextInt();
         if(a==1){
             for (int i = 0; i < classes.size(); i++) {
                 classes.get(i).toString();
             }
-            Showlist();
+            showList();
         } else if (a==2) {
             for (int i = 0; i < leasonpages.size(); i++) {
                 leasonpages.get(i).toString();
             }
-            Showlist();
+            showList();
         }else if (a==3) {
             for (int i = 0; i < leasonpages.size(); i++) {
                 .get(i).toString();
             }
-            Showlist();
+            showList();
         }
     }
 }
