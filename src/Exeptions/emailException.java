@@ -1,4 +1,4 @@
 package Exeptions;
 
-public class emailException extends RuntimeException {
+public class emailException extends Exception {
 }
