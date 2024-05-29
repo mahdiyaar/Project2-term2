@@ -8,9 +8,9 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class User {
-    private String name, lastname;
-    private String username, password, email, phoneNumber;
-    private String id;
+    protected String name, lastname;
+    protected String username, password, email, phoneNumber;
+    protected String id;
     private static ArrayList<Static_Atribute> static_atributes = new ArrayList<>();
     private boolean staticatribute[] = new boolean[4];
 
