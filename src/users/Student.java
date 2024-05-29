@@ -17,7 +17,7 @@ public class Student extends User {
             this.field = field;
         else
             throw new FieldExeption();
-        if(id.length() != 10)throw new IdLenNotMatchException();
+        if(id.length() != 10)throw new IdLenNotMatchException("len of id must be 10 digits");
     }
 
     public String getField() {
