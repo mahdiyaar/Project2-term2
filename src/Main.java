@@ -79,8 +79,9 @@ public class Main {
                         try {
                             User.users.add(new Student(name, lastname, field, username, password, email, phoneNumber, id));
                             flag = false;
-                        } catch (IdLenNotMatchException e) {
-                            System.out.println("len of id must be 10 digits. please try again:");
+                        } catch (InvalidIDException e) {
+                            System.err.print(e.getMessage());
+                            System.out.println(" please try again:");
                             id = scanner.nextLine();
                         } catch (FieldExeption e) {
                             System.out.println("field is invalid. please try again:");
@@ -103,9 +104,6 @@ public class Main {
                         } catch (emailException e) {
                             System.out.println("email is invalid. please try again:");
                             email = scanner.nextLine();
-                        } catch (IdException e) {
-                            System.out.println("id is taken by another user. please try again:");
-                            id = scanner.nextLine();
                         }
                 } else if (Objects.equals(input, "2")) {
                     System.out.println("please enter:");
@@ -130,8 +128,9 @@ public class Main {
                         try {
                             User.users.add(new Master(name, lastname, field, username, password, email, phoneNumber, id));
                             flag = false;
-                        } catch (IdLenNotMatchException e) {
-                            System.out.println("len of id must be 6 digits. please try again:");
+                        } catch (InvalidIDException e) {
+                            System.err.print(e.getMessage());
+                            System.out.println(" please try again:");
                             id = scanner.nextLine();
                         } catch (FieldExeption e) {
                             System.out.println("field is invalid. please try again:");
@@ -154,9 +153,8 @@ public class Main {
                         } catch (emailException e) {
                             System.out.println("email is invalid. please try again:");
                             email = scanner.nextLine();
-                        } catch (IdException e) {
-                            System.out.println("id is taken by another user. please try again:");
-                            id = scanner.nextLine();
+                        }finally {
+                            System.out.println("ID Processed");
                         }
                 } else if (Objects.equals(input, "3")) {
                     System.out.println("please enter:");
@@ -179,8 +177,9 @@ public class Main {
                         try {
                             User.users.add(new Employee(name, lastname, username, password, email, phoneNumber, id));
                             flag = false;
-                        } catch (IdLenNotMatchException e) {
-                            System.out.println("len of id must be 4 digits. please try again:");
+                        } catch (InvalidIDException e) {
+                            System.err.print(e.getMessage());
+                            System.out.println(" please try again:");
                             id = scanner.nextLine();
                         } catch (PasswordException e) {
                             System.out.println("password is invalid. please try again:");
@@ -200,9 +199,6 @@ public class Main {
                         } catch (emailException e) {
                             System.out.println("email is invalid. please try again:");
                             email = scanner.nextLine();
-                        } catch (IdException e) {
-                            System.out.println("id is taken by another user. please try again:");
-                            id = scanner.nextLine();
                         }
                 }
 

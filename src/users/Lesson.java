@@ -62,6 +62,7 @@ public class Lesson {
         }
         while (true){
             System.out.println("do you want to add question?(y/n)");
+            System.out.println("or enter number of question you need to remove");
             String input = scanner.nextLine();
             if(Objects.equals(input, "y")){
                 System.out.println("enter the question :");
@@ -69,7 +70,19 @@ public class Lesson {
                 practice.questions.add(input);
             } else if (Objects.equals(input, "n")) {
                 break;
+            } else if (input.matches("[0-9]+")) {
+                int index2 = Integer.parseInt(input);
+                try {
+                    practices.get(index).questions.remove(index2);
+                    System.out.println("deleted!");
+                }catch (IndexOutOfBoundsException e){
+                    e.printStackTrace();
+                    System.out.println("عدد نامعتبر است!");
+                }
+            }else{
+                System.out.println("ورودی نامعتبر است!");
             }
+
         }
     }
 }

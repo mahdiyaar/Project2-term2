@@ -22,7 +22,7 @@ public class User {
     public static ArrayList<User> users = new ArrayList<User>();
 
     public User(String name, String lastname, String username, String password, String email, String phoneNumber, String id)
-            throws NameException, LastNameException, IdException, UsernameException, PasswordException, emailException, PhoneNumberException {
+            throws NameException, LastNameException, IdRepeatedException, UsernameException, PasswordException, emailException, PhoneNumberException {
         for (int i = 0; i < 4; i++) {
             staticatribute[i] = true;
         }
@@ -64,7 +64,7 @@ public class User {
         if (staticatribute[1])
             this.id = id;
         else
-            throw new IdException();
+            throw new IdRepeatedException("id is repeated!");
         if (staticatribute[2]) {
             String p1, p2, p3;
             p1 = email.substring(0, email.indexOf('@'));
