@@ -87,107 +87,277 @@ public class Employee extends User {
                         System.out.printf("استاد با این نام کاربری یافت نشد");
                     } else {
                         while (true) {
-
+                            System.out.println("1.تغییر نام");
+                            System.out.println("2.تغییر فامیل");
+                            System.out.println("3.تغییر شناسه");
+                            System.out.println("4.تغییر نام کاربری");
+                            System.out.println("5.تغییر رمز");
+                            System.out.println("6.تغییر رشته");
+                            System.out.println("7.تغییر ایمیل");
+                            System.out.println("8.تغییر شماره تلفن");
+                            System.out.println("خروج");
+                            System.out.println("time: " + new Date());
+                            input = scanner.nextLine();
+                            if (Objects.equals(input, "1")) {
+                                System.out.println("نام جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setName(input);
+                                } catch (NameException e) {
+                                    System.out.println("نام جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "خروج") || Objects.equals(input, "q")) {
+                                System.out.println("logout!");
+                                break;
+                            } else if (Objects.equals(input, "2")) {
+                                System.out.println("فامیل جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setLastname(input);
+                                } catch (LastNameException e) {
+                                    System.out.println("نام جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "3")) {
+                                System.out.println("شناسه اموزشی جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                user.setId(input);
+                            } else if (Objects.equals(input, "4")) {
+                                System.out.println("نام کاربری جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setUsername(input);
+                                } catch (UsernameException e) {
+                                    System.out.println("نام کاربری جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "5")) {
+                                System.out.println("رمز ورود جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setPassword(input);
+                                } catch (PasswordException e) {
+                                    System.out.println("رمز ورود جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "6")) {
+                                System.out.println("رشته جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setField(input);
+                                } catch (FieldExeption e) {
+                                    System.out.println("رشته جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "7")) {
+                                System.out.println("ایمیل جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setEmail(input);
+                                } catch (emailException e) {
+                                    System.out.println("ایمیل جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "8")) {
+                                System.out.println("شماره تلفن جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setPhoneNumber(input);
+                                } catch (PhoneNumberException e) {
+                                    System.out.println("شماره تلفن جدید اشتباه است دوباره وارد کنید");
+                                }
+                            }
                         }
                     }
                 }
+                }else if (Objects.equals(input, "4")) {
+                    while (true) {
+                        int index;
+                        System.out.printf("نام کاربری دانشجو را وارد کنید ");
+                        String name = scanner.nextLine();
+                        boolean select = true;
+                        Master user = null;
+                        for (int i = 0; i < users.size(); i++) {
+                            if (name == users.get(i).getUsername()) {
+                                user = (Master) users.get(i);
+                                select = false;
+                                break;
+                            }
+                        }
+                        if (select) {
+                            System.out.printf("دانشجو با این نام کاربری یافت نشد");
+                        } else {
+                            while (true) {
+                                System.out.println("1.تغییر نام");
+                                System.out.println("2.تغییر فامیل");
+                                System.out.println("3.تغییر شناسه");
+                                System.out.println("4.تغییر نام کاربری");
+                                System.out.println("5.تغییر رمز");
+                                System.out.println("6.تغییر رشته");
+                                System.out.println("7.تغییر ایمیل");
+                                System.out.println("8.تغییر شماره تلفن");
+                                System.out.println("خروج");
+                                System.out.println("time: " + new Date());
+                                input=scanner.nextLine();
+                            if (Objects.equals(input, "1")) {
+                                System.out.println("نام جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setName(input);
+                                } catch (NameException e) {
+                                    System.out.println("نام جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "خروج") || Objects.equals(input, "q")) {
+                                System.out.println("logout!");
+                                break;
+                            } else if (Objects.equals(input, "2")) {
+                                System.out.println("فامیل جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setLastname(input);
+                                } catch (LastNameException e) {
+                                    System.out.println("نام جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "3")) {
+                                System.out.println("شناسه اموزشی جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                user.setId(input);
+                            } else if (Objects.equals(input, "4")) {
+                                System.out.println("نام کاربری جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setUsername(input);
+                                } catch (UsernameException e) {
+                                    System.out.println("نام کاربری جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "5")) {
+                                System.out.println("رمز ورود جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setPassword(input);
+                                } catch (PasswordException e) {
+                                    System.out.println("رمز ورود جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "6")) {
+                                System.out.println("رشته جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setField(input);
+                                } catch (FieldExeption e) {
+                                    System.out.println("رشته جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "7")) {
+                                System.out.println("ایمیل جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setEmail(input);
+                                } catch (emailException e) {
+                                    System.out.println("ایمیل جدید اشتباه است دوباره وارد کنید");
+                                }
+                            } else if (Objects.equals(input, "8")) {
+                                System.out.println("شماره تلفن جدید را وارد کنید");
+                                input = scanner.nextLine();
+                                try {
+                                    user.setPhoneNumber(input);
+                                } catch (PhoneNumberException e) {
+                                    System.out.println("شماره تلفن جدید اشتباه است دوباره وارد کنید");
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+}
+        private void editLessons (Lesson les){
+            while (true) {
+                System.out.println("------------------");
+                System.out.println("--" + les.getName() + "--");
+                System.out.println("1. اعلانات");
+                System.out.println("2. مطالب درسی");
+                System.out.println("3. تمارین");
+                System.out.println("4. امتحانات");
+                System.out.println("5.حدف دانشجو");
+                System.out.println("6.اضافه دانشجو");
+                System.out.println("خروج");
+                Scanner scanner = new Scanner(System.in);
+                String input = scanner.nextLine();
+                if (Objects.equals(input, "1")) {
+                    for (String not : les.notifications) {
+                        System.out.println("-" + not);
+                    }
+                    System.out.println("آیا می خواهید اضافه کنید؟(بله/خیر)");
+                    input = scanner.nextLine();
+                    if (Objects.equals(input, "بله")) {
+                        System.out.println("متن خود را وارد کنید: ");
+                        les.notifications.add(scanner.nextLine());
+                    }
+                } else if (Objects.equals(input, "2")) {
+                    for (String mat : les.courseMaterial) {
+                        System.out.println("-" + mat);
+                    }
+                    System.out.println("آیا می خواهید اضافه کنید؟(بله/خیر)");
+                    input = scanner.nextLine();
+                    if (Objects.equals(input, "بله")) {
+                        System.out.println("متن خود را وارد کنید: ");
+                        les.courseMaterial.add(scanner.nextLine());
+                    }
+                } else if (Objects.equals(input, "3")) {
+                    for (int i = 0; i < les.practices.size(); i++) {
+                        System.out.println(i + "- " + les.practices.get(i));
+                    }
+                    System.out.println("در صورت درخواست تغییر شماره را وارد کنید");
+                    System.out.println("در صورت درخواست اضاثه کردن بله را وارد کنید");
+                    System.out.println("در غیر این صورت خیر را وارد کنید");
+                    input = scanner.nextLine();
+                    if (Objects.equals(input, "بله")) {
+                        les.getPracticeFromUser();
+                    } else if (Objects.equals(input, "خیر")) {
+                        continue;
+                    } else if (input.matches("[0-9]+")) {
+                        int index = Integer.parseInt(input);
+                        try {
+                            les.editPracticeFromUser(index);
+                        } catch (IndexOutOfBoundsException e) {
+                            System.out.println("عدد نامعتبر است!");
+                        }
+                    } else {
+                        System.out.println("ورودی نامعتبر است!");
+                    }
+
+                    editPractice();
+                } else if (Objects.equals(input, "5")) {
+                    System.out.println("شماره دانشجویی فرn مورد نظر را وارد کنید");
+                    String serchid;
+                    boolean removed = false;
+                    serchid = scanner.nextLine();
+                    for (int i = 0; i < les.students.size(); i++) {
+                        if (Objects.equals(serchid, les.students.get(i).getId())) {
+                            les.students.remove(i);
+                            removed = true;
+                            break;
+                        }
+                    }
+                    if (!removed) {
+                        System.out.println("دانشجوی موردنظر یافت نشد");
+                    }
+                } else if (Objects.equals(input, "6")) {
+                    System.out.println("شماره دانشجویی فرئ مورد نظر را وارد کنید");
+                    String serchid;
+                    boolean plusd = false;
+                    serchid = scanner.nextLine();
+                    for (int i = 0; i < users.size(); i++) {
+                        if (Objects.equals(serchid, users.get(i).getId())) {
+                            les.students.add((Student) users.get(i));
+                            plusd = true;
+                            break;
+                        }
+                    }
+                    if (!plusd) {
+                        System.out.println("دانشجوی موردنظر یافت نشد");
+                    }
+                }
+            }
+        }
+
+        private void editPractice () {
+
+            if (id.length() != 4) throw new IdLenNotMatchException("len of id must be 4 digits");
         }
     }
-}
-
-private void editLessons(Lesson les) {
-    while (true) {
-        System.out.println("------------------");
-        System.out.println("--" + les.getName() + "--");
-        System.out.println("1. اعلانات");
-        System.out.println("2. مطالب درسی");
-        System.out.println("3. تمارین");
-        System.out.println("4. امتحانات");
-        System.out.println("5.حدف دانشجو");
-        System.out.println("6.اضافه دانشجو");
-        System.out.println("خروج");
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        if (Objects.equals(input, "1")) {
-            for (String not : les.notifications) {
-                System.out.println("-" + not);
-            }
-            System.out.println("آیا می خواهید اضافه کنید؟(بله/خیر)");
-            input = scanner.nextLine();
-            if (Objects.equals(input, "بله")) {
-                System.out.println("متن خود را وارد کنید: ");
-                les.notifications.add(scanner.nextLine());
-            }
-        } else if (Objects.equals(input, "2")) {
-            for (String mat : les.courseMaterial) {
-                System.out.println("-" + mat);
-            }
-            System.out.println("آیا می خواهید اضافه کنید؟(بله/خیر)");
-            input = scanner.nextLine();
-            if (Objects.equals(input, "بله")) {
-                System.out.println("متن خود را وارد کنید: ");
-                les.courseMaterial.add(scanner.nextLine());
-            }
-        } else if (Objects.equals(input, "3")) {
-            for (int i = 0; i < les.practices.size(); i++) {
-                System.out.println(i + "- " + les.practices.get(i));
-            }
-            System.out.println("در صورت درخواست تغییر شماره را وارد کنید");
-            System.out.println("در صورت درخواست اضاثه کردن بله را وارد کنید");
-            System.out.println("در غیر این صورت خیر را وارد کنید");
-            input = scanner.nextLine();
-            if (Objects.equals(input, "بله")) {
-                les.getPracticeFromUser();
-            } else if (Objects.equals(input, "خیر")) {
-                continue;
-            } else if (input.matches("[0-9]+")) {
-                int index = Integer.parseInt(input);
-                try {
-                    les.editPracticeFromUser(index);
-                } catch (IndexOutOfBoundsException e) {
-                    System.out.println("عدد نامعتبر است!");
-                }
-            } else {
-                System.out.println("ورودی نامعتبر است!");
-            }
-
-            editPractice();
-        } else if (Objects.equals(input, "5")) {
-            System.out.println("شماره دانشجویی فرn مورد نظر را وارد کنید");
-            String serchid;
-            boolean removed = false;
-            serchid = scanner.nextLine();
-            for (int i = 0; i < les.students.size(); i++) {
-                if (Objects.equals(serchid, les.students.get(i).getId())) {
-                    les.students.remove(i);
-                    removed = true;
-                    break;
-                }
-            }
-            if (!removed) {
-                System.out.println("دانشجوی موردنظر یافت نشد");
-            }
-        } else if (Objects.equals(input, "6")) {
-            System.out.println("شماره دانشجویی فرئ مورد نظر را وارد کنید");
-            String serchid;
-            boolean plusd = false;
-            serchid = scanner.nextLine();
-            for (int i = 0; i < users.size(); i++) {
-                if (Objects.equals(serchid, users.get(i).getId())) {
-                    les.students.add((Student) users.get(i));
-                    plusd = true;
-                    break;
-                }
-            }
-            if (!plusd) {
-                System.out.println("دانشجوی موردنظر یافت نشد");
-            }
-        }
-    }
-}
-
-private void editPractice() {
-
-    if (id.length() != 4) throw new IdLenNotMatchException("len of id must be 4 digits");
-}
-}

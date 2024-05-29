@@ -1,12 +1,6 @@
 package users;
 
-import Exceptions.IdException;
-import Exceptions.LastNameException;
-import Exceptions.NameException;
-import Exceptions.emailException;
-import Exceptions.PasswordException;
-import Exceptions.PhoneNumberException;
-import Exceptions.UsernameException;
+import Exceptions.*;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -190,7 +184,7 @@ public class User {
         return Objects.equals(this.password, password);
     }
 
-    public void showList(){
+    public void showList()  {
         System.out.println("--------------------");
         System.out.println("سلام" + name);
         System.out.println("از موارد زیر یک گزینه را انتخاب کنید و وارد کنید");
