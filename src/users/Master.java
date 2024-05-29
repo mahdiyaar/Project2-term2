@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class Master extends User {
     String field;
 
-    private ArrayList<Lesson> lessons = new ArrayList<Lesson>();
+    ArrayList<Lesson> lessons = new ArrayList<Lesson>();
 
     public Master(String name, String lastname, String field, String username, String password, String email, String phoneNumber, String id) throws IdLenNotMatchException, FieldExeption, PasswordException, PhoneNumberException, NameException, UsernameException, LastNameException, emailException, IdException {
         super(name, lastname, username, password, email, phoneNumber, id);
@@ -51,7 +51,7 @@ public class Master extends User {
             if (Objects.equals(input, "1")) {
                 printProf();
                 System.out.println("field: " + field);
-            } else if (Objects.equals(input, "خزوج") || Objects.equals(input, "q")) {
+            } else if (Objects.equals(input, "خروج") || Objects.equals(input, "q")) {
                 System.out.println("logout!");
                 break;
             } else if (Objects.equals(input, "2")) {
@@ -140,7 +140,7 @@ public class Master extends User {
 
                 editPractice();
             } else if (Objects.equals(input, "5")) {
-                System.out.println("شماره دانشجویی فرئ مورد نظر را وارد کنید");
+                System.out.println("شماره دانشجویی فرد مورد نظر را وارد کنید");
                 String serchid;
                 boolean removed=false;
                 serchid=scanner.nextLine();

@@ -204,4 +204,13 @@ public class User {
         System.out.println(name + " " + lastname + "\n" + "username: " + username + "password: " + password + "\n" +
                 email + "\n" + phoneNumber + "\n" + "id: " + id);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) && Objects.equals(lastname, user.lastname) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(email, user.email) && Objects.equals(phoneNumber, user.phoneNumber) && Objects.equals(id, user.id);
+    }
+
 }

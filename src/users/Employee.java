@@ -16,49 +16,82 @@ public class Employee extends User {
         super(name, lastname, username, password, email, phoneNumber, id);
         if(id.length() != 4)throw new IdLenNotMatchException();
     }
-    /*@Override
+    @Override
     public void showList(){
         while (true) {
             super.showList();
             System.out.println("2.کلاس ها");
-            System.out.println("3.حدف واضافه دانشجو");
+            System.out.println("3.حدف واضافه و تغییر اظلاعات استاد");
+            System.out.println("4.حدف و اضافه و تغییر اطلاعات دانشجو");
             System.out.println("خروج");
             System.out.println("time: " + new Date());
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
-
             if (Objects.equals(input, "1")) {
                 printProf();
-                System.out.println("field: " + field);
-            } else if (Objects.equals(input, "خزوج") || Objects.equals(input, "q")) {
+            } else if (Objects.equals(input, "خروج") || Objects.equals(input, "q")) {
                 System.out.println("logout!");
                 break;
             } else if (Objects.equals(input, "2")) {
                 while (true) {
                     int index;
-                    for (int i = 0; i < lessons.size(); i++) {
-                        System.out.println(i + "- " + lessons.get(i).getName());
-                    }
-                    input = scanner.nextLine();
-                    boolean flag = true;
-                    Lesson current = null;
-                    while (flag)
-                        try{
-                            input = scanner.nextLine();
-                            index = Integer.parseInt(input);
-                            current = lessons.get(index);
-                            flag = false;
-                        }catch (IndexOutOfBoundsException e){
-                            System.out.println("عدد نامعتبر است!");
-                        }catch (RuntimeException e){
-                            System.out.println("لطفا عدد وارد کنید!");
+                    System.out.printf("نام کاربری استادی که این کلاس را دارد وارد کنید ");
+                    String name = scanner.nextLine();
+                    boolean select = true;
+                    Master user = null;
+                    for (int i = 0; i < users.size(); i++) {
+                        if (name == users.get(i).getUsername()) {
+                            user = (Master) users.get(i);
+                            select = false;
+                            break;
                         }
+                    }
+                    if (select) {
+                        System.out.printf("استاد با این نام کاربری یافت نشد");
+                    } else {
+                        for (int i = 0; i < user.lessons.size(); i++) {
+                            System.out.println(i + "- " + user.lessons.get(i).getName());
+                        }
+                        input = scanner.nextLine();
+                        boolean flag = true;
+                        Lesson current = null;
+                        while (flag)
+                            try {
+                                input = scanner.nextLine();
+                                index = Integer.parseInt(input);
+                                current = user.lessons.get(index);
+                                flag = false;
+                            } catch (IndexOutOfBoundsException e) {
+                                System.out.println("عدد نامعتبر است!");
+                            } catch (RuntimeException e) {
+                                System.out.println("لطفا عدد وارد کنید!");
+                            }
 
-                    editLessons(current);
+                        editLessons(current);
 
+                    }
                 }
             } else if (Objects.equals(input,"3")){
-                System.out.println("شماره دانشج");
+                while (true) {
+                    int index;
+                    System.out.printf("نام کاربری استادی که این کلاس را دارد وارد کنید ");
+                    String name = scanner.nextLine();
+                    boolean select = true;
+                    Master user = null;
+                    for (int i = 0; i < users.size(); i++) {
+                        if (name == users.get(i).getUsername()) {
+                            user = (Master) users.get(i);
+                            select = false;
+                            break;
+                        }
+                    }
+                    if (select) {
+                        System.out.printf("استاد با این نام کاربری یافت نشد");
+                    } else {
+                        for (int i = 0; i < user.lessons.size(); i++) {
+                            System.out.println(i + "- " + user.lessons.get(i).getName());
+                        }
+                }
             }
         }
     }
@@ -121,7 +154,7 @@ public class Employee extends User {
 
                 editPractice();
             } else if (Objects.equals(input, "5")) {
-                System.out.println("شماره دانشجویی فرئ مورد نظر را وارد کنید");
+                System.out.println("شماره دانشجویی فرn مورد نظر را وارد کنید");
                 String serchid;
                 boolean removed=false;
                 serchid=scanner.nextLine();
@@ -142,7 +175,7 @@ public class Employee extends User {
                 serchid = scanner.nextLine();
                 for (int i = 0; i < users.size(); i++) {
                     if (Objects.equals(serchid, users.get(i).getId())) {
-                        les.students.add(users.get(i));
+                        les.students.add((Student) users.get(i));
                         plusd = true;
                         break;
                     }
@@ -156,5 +189,5 @@ public class Employee extends User {
 
     private void editPractice() {
 
-    }*/
+    }
 }
